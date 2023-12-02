@@ -2,6 +2,7 @@ import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
 import { router } from './router/index.ts';
+import { NetworkProvider } from './context/NetworkContex.tsx';
 
 import './index.css';
 import '@fontsource/inter/100.css';
@@ -16,6 +17,8 @@ import '@fontsource/inter/900.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <NetworkProvider>
+      <RouterProvider router={router} />
+    </NetworkProvider>
   </StrictMode>
 );
